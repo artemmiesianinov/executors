@@ -27,7 +27,7 @@ public:
   __small_block_recycler(const __small_block_recycler&) = delete;
   __small_block_recycler& operator=(const __small_block_recycler&) = delete;
 
-  __small_block_recycler() : _M_memory(nullptr), _M_next_memory(nullptr)
+  constexpr __small_block_recycler() : _M_memory(nullptr), _M_next_memory(nullptr)
   {
   }
 

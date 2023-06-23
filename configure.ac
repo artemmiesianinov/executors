@@ -1,4 +1,4 @@
-AC_INIT(executors, [0.1.0])
+AC_INIT([executors],[0.1.0])
 AC_CONFIG_SRCDIR(include/experimental/type_traits)
 AM_MAINTAINER_MODE
 AM_INIT_AUTOMAKE([tar-ustar])
@@ -10,7 +10,7 @@ AC_LANG(C++)
 AC_PROG_RANLIB
 
 AC_ARG_WITH(boost,
-  AC_HELP_STRING([--with-boost=DIR],[location of boost distribution]),
+  AS_HELP_STRING([--with-boost=DIR],[location of boost distribution]),
 [
   if test "${withval}" = no; then
     CPPFLAGS="$CPPFLAGS -DEXECUTORS_NO_BOOST=1"
@@ -60,7 +60,7 @@ if test "$GXX" = yes; then
   CPPFLAGS="-std=c++1y -Wno-unused-local-typedefs $CPPFLAGS"
 fi
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
   Makefile
   include/Makefile
   src/Makefile
@@ -81,3 +81,4 @@ AC_OUTPUT([
   src/tests/thread_pool/Makefile
   src/tests/timer/Makefile
   src/tests/traits/Makefile])
+AC_OUTPUT
